@@ -1056,7 +1056,7 @@ static void *__poller_thread_routine(void *arg)
 	int has_pipe_event;
 	int nevents;
 	int i;
-
+	pthread_setname_np(pthread_self(), "pooler");
 	while (1)
 	{
 		__poller_set_timer(poller);

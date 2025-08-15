@@ -66,7 +66,7 @@ static void *__thrdpool_routine(void *arg)
 	struct __thrdpool_task_entry *entry;
 	void (*task_routine)(void *);
 	void *task_context;
-
+	pthread_setname_np(pthread_self(), "thrdpool");
 	pthread_setspecific(pool->key, pool);
 	while (!pool->terminate)
 	{
